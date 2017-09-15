@@ -2,8 +2,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from user.models import Patient
 from user.forms import PatientForm
 
-
-def patient_view(request):
+def patient_view(request, pk):
     patient = get_object_or_404(Patient, pk=pk)
     template_name = ''
     context = {
@@ -13,8 +12,8 @@ def patient_view(request):
 
 
 def patient_register(request):
-    template_name = ''
-    template_redirect = ''
+    template_name = 'templates/register.html'
+    template_redirect = 'templates/register-sucess.html'
 
     if request.method == "POST":
         form = PatientForm(request.POST)
