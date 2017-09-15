@@ -6,10 +6,9 @@ NAME_MIN_LENGTH = 5
 NAME_MAX_LENGHT = 50
 
 # NAME VALIDATION MESSAGES
-NAME_SIZE = 'Your name exceeds 50 characteres'
 NAME_CHARACTERS = 'Your name can\'t have special characters'
 NAME_FORMAT = 'Your name must have just letters'
-USERNAME_SIZE = 'Name must be between 5 and 50 characteres'
+NAME_SIZE = 'Name must be between 5 and 50 characteres'
 
 # DATE OF BIRTH FIELDS.
 DATE_OF_BIRTH = 'Birth Date'
@@ -33,7 +32,7 @@ PHONE_NUMBER_MIN_LENGTH = 10
 PHONE_NUMBER_MAX_LENGTH = 11
 
 # PHONE NUMBER VALIDATION MESSAGES.
-PHONE_NUMBER_SIZE = 'Your phone number exceeds 11 numbers'
+PHONE_NUMBER_SIZE = 'Your phone number must be between 10 and 11 numbers'
 PHONE_NUMBER_FORMAT = 'Your phone number must have just numbers'
 
 # PASSWORDS FIELDS.
@@ -50,6 +49,7 @@ PASSWORD_NOT_EQUAL = 'Passwords do not match.'
 SEX = 'Sex'
 
 # SEX VALIDATION MESSAGES.
+
 
 """
 -RN01	Nome	String (5 a 50 caracteres)	Sim	--
