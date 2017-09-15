@@ -11,10 +11,10 @@ NAME_CHARACTERS = 'Your name can\'t have special characters'
 NAME_FORMAT = 'Your name must have just letters'
 USERNAME_SIZE = 'Name must be between 5 and 50 characteres'
 
-# BIRTH DATE FIELDS.
-NAME = 'Birth Date'
-# BIRTH DATE VALIDATION MESSAGES.
-BIRTH_DATE_FORMAT = 'Invalid birth date'
+# DATE OF BIRTH FIELDS.
+DATE_OF_BIRTH = 'Birth Date'
+# DATE OF BIRTH VALIDATION MESSAGES.
+DATE_OF_BIRTH_FORMAT = 'Invalid birth date'
 
 # ID DOCUMENT FIELD.
 ID_DOCUMENT = 'Id Document'
