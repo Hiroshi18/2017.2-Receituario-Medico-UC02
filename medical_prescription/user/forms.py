@@ -52,7 +52,7 @@ class PatientRegisterForm(forms.ModelForm):
         name = self.cleaned_data.get('name')
         password = self.cleaned_data.get('password')
         password_confirmation = self.cleaned_data.get('password_confirmation')
-        date_of_birth = self.cleaned_data.get('password_confirmation')
+        date_of_birth = self.cleaned_data.get('date_of_birth')
         phone = self.cleaned_data.get('phone')
         sex = self.cleaned_data.get('sex')
         id_document = self.cleaned_data.get('id_document')
@@ -64,16 +64,16 @@ class PatientRegisterForm(forms.ModelForm):
         elif password != password_confirmation:
             raise forms.ValidationError(_(constants.PASSWORD_NOT_EQUAL))
         elif len(name) > constants.NAME_MAX_LENGHT:
-            raise forms.ValidationError(_(constans.NAME_SIZE))
+            raise forms.ValidationError(_(constants.NAME_SIZE))
         elif len(name) < constants.NAME_MIN_LENGHT:
-            raise forms.ValidationError(_(constans.NAME_SIZE))
-        elif len(phone) > constants.PHONE_NUMBER_MAX_LENGTH
-            raise forms.ValidationError(_(constans.PHONE_NUMBER_SIZE))
-        elif len(phone) < constants.PHONE_NUMBER_MIN_LENGTH
-            raise forms.ValidationError(_(constans.PHONE_NUMBER_SIZE))
-        elif len(id_document) < constants.ID_DOCUMENT_MIN_LENGTH
-            raise forms.ValidationError(_(constans.ID_DOCUMENT_SIZE))
-        elif len(id_document) < constants.ID_DOCUMENT_MAX_LENGTH_MIN_LENGTH
-            raise forms.ValidationError(_(constans.ID_DOCUMENT_SIZE))
+            raise forms.ValidationError(_(constants.NAME_SIZE))
+        elif len(phone) > constants.PHONE_NUMBER_MAX_LENGTH:
+            raise forms.ValidationError(_(constants.PHONE_NUMBER_SIZE))
+        elif len(phone) < constants.PHONE_NUMBER_MIN_LENGTH:
+            raise forms.ValidationError(_(constants.PHONE_NUMBER_SIZE))
+        elif len(id_document) < constants.ID_DOCUMENT_MIN_LENGTH:
+            raise forms.ValidationError(_(constants.ID_DOCUMENT_SIZE))
+        elif len(id_document) < constants.ID_DOCUMENT_MAX_LENGTH_MIN_LENGTH:
+            raise forms.ValidationError(_(constants.ID_DOCUMENT_SIZE))
 
-        return super(UserRegisterForm, self).clean(*args, **kwargs)
+        return super(PatientRegisterForm, self).clean(*args, **kwargs)
