@@ -3,7 +3,7 @@ from user.models import Patient
 from user.forms import PatientForm
 
 
-def patient_view(request):
+def patient_view(request, pk):
     patient = get_object_or_404(Patient, pk=pk)
     template_name = ''
     context = {
