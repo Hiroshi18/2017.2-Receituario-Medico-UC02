@@ -2,6 +2,10 @@ from django.shortcuts import render, redirect, get_object_or_404
 from user.models import Patient
 from user.forms import PatientForm
 
+<<<<<<< HEAD
+
+=======
+>>>>>>> 411fcb60d22600503afd2aa30f31d8a7b33572d4
 def patient_view(request, pk):
     patient = get_object_or_404(Patient, pk=pk)
     template_name = ''
