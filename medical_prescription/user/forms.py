@@ -22,8 +22,8 @@ class PatientForm(forms.ModelForm):
 class PatientRegisterForm(forms.ModelForm):
     # Form Fields.
     name = forms.CharField(label=constants.NAME,
-                               max_length=constants.NAME_MAX_LENGHT,
-                               min_length=constants.NAME_MIN_LENGTH)
+                            max_length=constants.NAME_MAX_LENGHT,
+                            min_length=constants.NAME_MIN_LENGTH)
 
     password = forms.CharField(widget=forms.PasswordInput,
                                label=_('Password'))
@@ -71,5 +71,9 @@ class PatientRegisterForm(forms.ModelForm):
             raise forms.ValidationError(_(constans.PHONE_NUMBER_SIZE))
         elif len(phone) < constants.PHONE_NUMBER_MIN_LENGTH
             raise forms.ValidationError(_(constans.PHONE_NUMBER_SIZE))
+        elif len(id_document) < constants.ID_DOCUMENT_MIN_LENGTH
+            raise forms.ValidationError(_(constans.ID_DOCUMENT_SIZE))
+        elif len(id_document) < constants.ID_DOCUMENT_MAX_LENGTH_MIN_LENGTH
+            raise forms.ValidationError(_(constans.ID_DOCUMENT_SIZE))
 
         return super(UserRegisterForm, self).clean(*args, **kwargs)
