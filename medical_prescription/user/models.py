@@ -57,4 +57,4 @@ class HealthProfessional(models.Model):
 
 class Patient(models.Model):
     patient = models.OneToOneField(User)
-    id_document = models.CharField(max_length=32)
+    id_document = models.CharField(blank=False, max_length=32, default='')

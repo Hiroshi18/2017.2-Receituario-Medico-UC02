@@ -1,12 +1,9 @@
 from django import forms
-from .models import HealthProfessional, User
+from .models import HealthProfessional, Patient, User
 from django.core.exceptions import ValidationError
-
 from datetime import date
 import re
 from .import constants
-from user.models import Patient
-
 
 def calculate_age(born):
     """
@@ -94,16 +91,18 @@ class HealthProfessionalForm(forms.ModelForm):
 
 
 class PatientForm(forms.ModelForm):
+
     class Meta:
         model = Patient
-        fields = ('id_document',)
+        fields = ['id_document']
 
     def clean(self):
+
         id_document = self.cleaned_data.get('id_document')
 
         if len(id_document) < constants.ID_DOCUMENT_MIN_LENGTH:
             raise forms.ValidationError((constants.ID_DOCUMENT_SIZE))
-        elif len(id_document) < constants.ID_DOCUMENT_MAX_LENGTH_MIN_LENGTH:
+        elif len(id_document) > constants.ID_DOCUMENT_MAX_LENGTH_MIN_LENGTH:
             raise forms.ValidationError((constants.ID_DOCUMENT_SIZE))
 
 

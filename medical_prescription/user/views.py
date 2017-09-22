@@ -2,7 +2,7 @@ from django.shortcuts import render
 from .models import HealthProfessional
 from .models import User
 from .models import Patient
-from .forms import HealthProfessionalForm, UserForm, UpdateUserForm, PatientForm
+from .forms import HealthProfessionalForm, PatientForm, UserForm, UpdateUserForm
 from django.views.generic.edit import DeleteView, UpdateView
 from django.urls import reverse_lazy
 
@@ -67,8 +67,7 @@ def register_patient(request):
 
         user = User.objects.get(email=email)
 
-        patient = Patient(
-            user=user, id_document=id_document)
+        patient = Patient(user=user, id_document=id_document)
 
         patient.save()
 
@@ -98,7 +97,7 @@ class DeleteHealthProfessional(DeleteView):
 
 
 class DeletePatient(DeleteView):
-    model = HealthProfessional
+    model = Patient
     success_url = reverse_lazy('view')
     template_name = 'patient_confirm_delete.html'
 
